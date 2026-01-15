@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <!-- CSS file-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <!-- Heading -->
+      <h1>User Management System</h1>
+
+      <!-- User Form -->
+      <section class="form-section">
+        <h2>Add / Edit User</h2>
+
+        <form id="userForm">
+          <!-- Hidden field for edit mode -->
+          <input type="hidden" id="userId" />
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter name" />
+            <small class="error" id="nameError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter email" />
+            <small class="error" id="emailError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" placeholder="Enter age" />
+            <small class="error" id="ageError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role">
+              <option value="">Select role</option>
+              <option value="Admin">Admin</option>
+              <option value="User">User</option>
+            </select>
+            <small class="error" id="roleError"></small>
+          </div>
+
+          <button type="submit" id="submitBtn">Save User</button>
+        </form>
+      </section>
+
+      <!-- Users List -->
+      <section class="table-section">
+        <h2>Users List</h2>
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by name or email..."
+          />
+        </div>
+
+        <table id="userTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody">
+            <!-- Users will be added here dynamically -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+  </body>
+</html>
